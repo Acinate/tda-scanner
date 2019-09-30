@@ -1,0 +1,11 @@
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/api/TimeSpan.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/auth/Auth.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/api/BadRequestException.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/api/TDA.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/api/TimeSpanException.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/util/DateParser.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/models/Quote.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/Main.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/database/Database.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/models/History.java
+/Users/Jason/Projects/Java/StockScanner/src/main/java/com/scanner/models/Candle.java
