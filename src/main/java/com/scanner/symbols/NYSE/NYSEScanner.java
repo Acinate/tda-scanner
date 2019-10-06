@@ -134,3 +134,12 @@ public class NYSEScanner {
                 "JSESSIONID=3F718C6C5585F83454EA0F34A82B14CE; _gat_UA-97108014-2=1; ICE=!T2B1ePBlCW/iprA+xkwKbNFUCBVLalFX+MMyuO6Wf+QIZPe0r7jrhOC5g0vMsLPmNVPfmHOmtOcyRg==; TS01ebd031=0100e6d49590e0af3beef5f49cb7629d623ed0c762f64010911cc51daf0d33dfa9ee93f618db82ac70333c16a79fe444b5cfea96b519cb3787ec1b335070360a3c515d5471e7723e493b07408d3aec21021ef20687316ee069fe56eb8bd41bc77a98f692d2";
     }
 }
+
+class NYSEBody {
+    String instrumentType;
+    int pageNumber;
+    String sortColumn;
+    String sortOrder;
+    int maxResultsPerPage;
+    String filterToken;
+}
