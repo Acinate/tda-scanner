@@ -1,4 +1,4 @@
-package scraper;
+package scanner.symbols.NYSE;
 
 import com.scanner.symbols.NYSE.NYSEScanner;
 import org.junit.jupiter.api.Test;
