@@ -15,8 +15,6 @@ public class NYSEScanner {
     String url = "https://www.nyse.com/api/quotes/filter";
     String cookie = "__cfduid=db19a0ddf9582bcdef1f6be3737b485261567429706; _ga=GA1.2.194448053.1567429708; ICE_notification=462751242.56425.0000; _gid=GA1.2.1259522087.1570200589; cookieDisclaimer=true; JSESSIONID=3F718C6C5585F83454EA0F34A82B14CE; _gat_UA-97108014-2=1; ICE=!T2B1ePBlCW/iprA+xkwKbNFUCBVLalFX+MMyuO6Wf+QIZPe0r7jrhOC5g0vMsLPmNVPfmHOmtOcyRg==; TS01ebd031=0100e6d49590e0af3beef5f49cb7629d623ed0c762f64010911cc51daf0d33dfa9ee93f618db82ac70333c16a79fe444b5cfea96b519cb3787ec1b335070360a3c515d5471e7723e493b07408d3aec21021ef20687316ee069fe56eb8bd41bc77a98f692d2";
 
-    enum ASSET_TYPE { EQUITY, EXCHANGE_TRADED_FUND, INDEX };
-
     /* assetType = {"EQUITY", "EXCHANGE_TRADED_FUND", "INDEX"} */
     private String GetBody(String assetType, int page, int pageSize) {
         NYSEBody body = new NYSEBody();
