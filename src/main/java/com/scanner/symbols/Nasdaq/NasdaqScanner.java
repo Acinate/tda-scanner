@@ -41,7 +41,7 @@ public class NasdaqScanner {
         int page = 1;
         int pageSize = 10;
         int count = GetCount("stock");
-        for (page = 1; page < (count / pageSize); page += pageSize) {
+        for (page = 1; page < (count / pageSize); page += 1) {
             symbols.putAll(ParsePage(page,pageSize));
         }
         return symbols;
