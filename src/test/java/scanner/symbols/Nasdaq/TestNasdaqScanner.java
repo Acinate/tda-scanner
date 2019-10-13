@@ -13,12 +13,6 @@ class TestNasdaqScanner {
     private NasdaqScanner nasdaqScraper = new NasdaqScanner();
 
     @Test
-    void TestGetNasdaqSymbol() {
-        HashMap<String, NasdaqSymbol> symbol = nasdaqScraper.ParsePageTest(1, 10);
-        Assertions.assertNotNull(symbol);
-    }
-
-    @Test
     void TestGetCount_Stock() throws Exception {
         Method method = NasdaqScanner.class.getDeclaredMethod("GetCount", String.class);
         method.setAccessible(true);
@@ -52,83 +46,88 @@ class TestNasdaqScanner {
 
     @Test
     void TestParsePage_Stock() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParsePage", int.class, int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParsePage", int.class, int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, 1, 10);
-        Assertions.assertNotNull(results);
-        Assertions.assertTrue(results.size() > 0);
+        HashMap<String, NasdaqSymbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, 1, 10, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertEquals(10, symbols.size());
     }
 
     @Test
     void TestParsePage_Stock_Empty() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParsePage", int.class, int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParsePage", int.class, int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, Integer.MAX_VALUE, 10);
-        Assertions.assertNotNull(results);
-        Assertions.assertEquals(0, results.size());
+        HashMap<String, NasdaqSymbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, Integer.MAX_VALUE, 10, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertEquals(0, symbols.size());
     }
 
     @Test
     void TestParseRows_Future() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class, int.class,
-                int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
+                int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, "futures", 20, 10, 0);
-        Assertions.assertNotNull(results);
-        Assertions.assertTrue(results.size() > 0);
+        HashMap<String, Symbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, "futures", 10, 0, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertTrue(symbols.size() > 0);
     }
 
     @Test
     void TestParseRows_Future_Empty() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class, int.class,
-                int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
+                int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, "futures", 20, 10,
-                Integer.MAX_VALUE);
+        HashMap<String, Symbol> results = new HashMap<>();
+        method.invoke(nasdaqScraper, "futures", 10, Integer.MAX_VALUE, results);
         Assertions.assertNotNull(results);
         Assertions.assertEquals(0, results.size());
     }
 
     @Test
     void TestParseRows_Index() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class, int.class,
-                int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
+                int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, "index", 20, 10, 0);
-        Assertions.assertNotNull(results);
-        Assertions.assertTrue(results.size() > 0);
+        HashMap<String, Symbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, "index", 10, 0, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertTrue(symbols.size() > 0);
     }
 
     @Test
     void TestParseRows_Index_Empty() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class, int.class,
-                int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
+                int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, "index", 20, 10,
-                Integer.MAX_VALUE);
-        Assertions.assertNotNull(results);
-        Assertions.assertEquals(0, results.size());
+        HashMap<String, Symbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, "index", 10, Integer.MAX_VALUE, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertEquals(0, symbols.size());
     }
 
     @Test
     void TestParseRows_Etf() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class, int.class,
-                int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
+                int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, "etf", 20, 10, 0);
-        Assertions.assertNotNull(results);
-        Assertions.assertTrue(results.size() > 0);
+        HashMap<String, Symbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, "etf", 10, 0, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertTrue(symbols.size() > 0);
     }
 
     @Test
     void TestParseRows_Etf_Empty() throws Exception {
-        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class, int.class,
-                int.class);
+        Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
+                int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = (HashMap<String, Symbol>) method.invoke(nasdaqScraper, "etf", 20, 10,
-                Integer.MAX_VALUE);
-        Assertions.assertNotNull(results);
-        Assertions.assertEquals(0, results.size());
+        HashMap<String, Symbol> symbols = new HashMap<>();
+        method.invoke(nasdaqScraper, "etf", 10, Integer.MAX_VALUE, symbols);
+        Assertions.assertNotNull(symbols);
+        Assertions.assertEquals(0, symbols.size());
     }
 
     @Test
