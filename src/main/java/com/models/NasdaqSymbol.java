@@ -10,12 +10,24 @@ import kong.unirest.json.JSONObject;
 public class NasdaqSymbol {
     public NasdaqSymbol(JSONObject symbol) {
         /* Parse General Stock Information */
-        this.ticker = symbol.getString("ticker");
-        this.company = symbol.getString("company");
-        this.marketCap = symbol.getLong("marketCap");
-        this.marketCapGroup = symbol.getString("marketCapGroup");
-        this.sectorName = symbol.getString("sectorName");
-        this.sector = symbol.getString("sector");
+        if (symbol.get("ticker") != null) {
+            this.ticker = symbol.getString("ticker");
+        }
+        if (symbol.get("company") != null) {
+            this.company = symbol.getString("company");
+        }
+        if (symbol.get("marketCap") != null) {
+            this.marketCap = symbol.getLong("marketCap");
+        }
+        if (symbol.get("marketCapGroup") != null) {
+            this.marketCapGroup = symbol.getString("marketCapGroup");
+        }
+        if (symbol.get("sectorName") != null) {
+            this.sectorName = symbol.getString("sectorName");
+        }
+        if (symbol.get("sector") != null) {
+            this.sector = symbol.getString("sector");
+        }
         /* Parse Dividend Data Object */
         if (symbol.get("dividendData") != null) {
             JSONObject dividendData = symbol.getJSONObject("dividendData");
