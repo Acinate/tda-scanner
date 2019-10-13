@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="" />
+    <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="increased nasdaq scanner test coverage">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_17.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/database/DatabaseOld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/database/TestDatabaseOld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestScanSymbols.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StockScanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockScanner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/NasdaqSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/NasdaqSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/auth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/database/TestDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/database/TestDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/Nasdaq/TestNasdaqScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/Nasdaq/TestNasdaqScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/api/TDA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/api/TDA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/database/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/auth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/api/TestTDA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/api/TestTDA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/database/TestDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/database/TestDatabase.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +30,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="219" />
+    <option name="myElementSize" value="224" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="StockScanner" />
@@ -21,17 +42,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RLfuTvqJcMPgUADwh15RSxTE8h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -54,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestDatabase">
+  <component name="RunManager" selected="JUnit.TestNasdaqScanner">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.com.scanner.Main" />
       <module name="StockScanner" />
@@ -68,97 +94,100 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNasdaqScanner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="auth.*" />
+          <option name="PATTERN" value="scanner.symbols.Nasdaq.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="auth" />
-      <option name="MAIN_CLASS_NAME" value="auth.TestAuth" />
+      <option name="PACKAGE_NAME" value="scanner.symbols.Nasdaq" />
+      <option name="MAIN_CLASS_NAME" value="scanner.symbols.Nasdaq.TestNasdaqScanner" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNasdaqScanner.TestGetNasdaqSymbol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="database.*" />
+          <option name="PATTERN" value="scanner.symbols.Nasdaq.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="database" />
-      <option name="MAIN_CLASS_NAME" value="database.TestDatabase" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestDatabase.TestWriteHistoryToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StockScanner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="database" />
-      <option name="MAIN_CLASS_NAME" value="database.TestDatabase" />
-      <option name="METHOD_NAME" value="TestWriteHistoryToFile" />
+      <option name="PACKAGE_NAME" value="scanner.symbols.Nasdaq" />
+      <option name="MAIN_CLASS_NAME" value="scanner.symbols.Nasdaq.TestNasdaqScanner" />
+      <option name="METHOD_NAME" value="TestGetNasdaqSymbol" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTDA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNasdaqScanner.TestParsePage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="api.*" />
+          <option name="PATTERN" value="scanner.symbols.Nasdaq.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="api" />
-      <option name="MAIN_CLASS_NAME" value="api.TestTDA" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="scanner.symbols.Nasdaq" />
+      <option name="MAIN_CLASS_NAME" value="scanner.symbols.Nasdaq.TestNasdaqScanner" />
+      <option name="METHOD_NAME" value="TestParsePage" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestTimeSpan" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNasdaqScanner.TestParseRows_Future" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="api.*" />
+          <option name="PATTERN" value="scanner.symbols.Nasdaq.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="api" />
-      <option name="MAIN_CLASS_NAME" value="api.TestTimeSpan" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="scanner.symbols.Nasdaq" />
+      <option name="MAIN_CLASS_NAME" value="scanner.symbols.Nasdaq.TestNasdaqScanner" />
+      <option name="METHOD_NAME" value="TestParseRows_Future" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestScanSymbols.TestScanSymbols" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockScanner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="scanner.symbols.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="scanner.symbols" />
+      <option name="MAIN_CLASS_NAME" value="scanner.symbols.TestScanSymbols" />
+      <option name="METHOD_NAME" value="TestScanSymbols" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.TestDatabase" />
-      <item itemvalue="JUnit.TestDatabase.TestWriteHistoryToFile" />
-      <item itemvalue="JUnit.TestTDA" />
-      <item itemvalue="JUnit.TestTimeSpan" />
-      <item itemvalue="JUnit.TestAuth" />
+      <item itemvalue="JUnit.TestNasdaqScanner" />
+      <item itemvalue="JUnit.TestScanSymbols.TestScanSymbols" />
+      <item itemvalue="JUnit.TestNasdaqScanner.TestGetNasdaqSymbol" />
+      <item itemvalue="JUnit.TestNasdaqScanner.TestParsePage" />
+      <item itemvalue="JUnit.TestNasdaqScanner.TestParseRows_Future" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestDatabase" />
-        <item itemvalue="JUnit.TestAuth" />
-        <item itemvalue="JUnit.TestTimeSpan" />
-        <item itemvalue="JUnit.TestTDA" />
-        <item itemvalue="JUnit.TestDatabase.TestWriteHistoryToFile" />
+        <item itemvalue="JUnit.TestNasdaqScanner" />
+        <item itemvalue="JUnit.TestNasdaqScanner.TestParseRows_Future" />
+        <item itemvalue="JUnit.TestNasdaqScanner.TestParsePage" />
+        <item itemvalue="JUnit.TestNasdaqScanner.TestGetNasdaqSymbol" />
+        <item itemvalue="JUnit.TestScanSymbols.TestScanSymbols" />
       </list>
     </recent_temporary>
   </component>
@@ -173,7 +202,112 @@
       <option name="presentableId" value="Default" />
       <updated>1569451519171</updated>
     </task>
+    <task id="LOCAL-00001" summary="added nasdaq symbol scanner">
+      <created>1570306606595</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1570306606595</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added nyse scanner">
+      <created>1570318860294</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1570318860294</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactored nasdaq scanner">
+      <created>1570381874778</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1570381874778</updated>
+    </task>
+    <task id="LOCAL-00004" summary="increased nasdaq scanner test coverage">
+      <created>1570382127346</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570382127346</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactored nyse scanner">
+      <created>1570404610322</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570404610322</updated>
+    </task>
+    <task id="LOCAL-00006" summary="increased nyse scanner test coverage">
+      <created>1570404633331</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570404633331</updated>
+    </task>
+    <task id="LOCAL-00007" summary="minor refactor">
+      <created>1570405017020</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570405017020</updated>
+    </task>
+    <task id="LOCAL-00008" summary="minor refactor">
+      <created>1570405191441</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1570405191441</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed bug with nasdaq stock scanner">
+      <created>1570405278861</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1570405278861</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added fundamental model, response parser and tests">
+      <created>1570926463287</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1570926463287</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added nasdaq symbol model">
+      <created>1570970703984</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1570970703984</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added nasdaq symbol scanner" />
+    <MESSAGE value="added nyse scanner" />
+    <MESSAGE value="refactored nasdaq scanner" />
+    <MESSAGE value="refactored nyse scanner" />
+    <MESSAGE value="increased nyse scanner test coverage" />
+    <MESSAGE value="minor refactor" />
+    <MESSAGE value="increased nasdaq scanner test coverage" />
+    <MESSAGE value="fixed bug with nasdaq stock scanner" />
+    <MESSAGE value="added fundamental model, response parser and tests" />
+    <MESSAGE value="Added nasdaq symbol model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added nasdaq symbol model" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
