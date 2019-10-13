@@ -1,5 +1,6 @@
 package scanner.symbols.Nasdaq;
 
+import com.models.NasdaqSymbol;
 import com.models.Symbol;
 import com.scanner.symbols.Nasdaq.NasdaqScanner;
 import org.junit.jupiter.api.Assertions;
@@ -10,6 +11,12 @@ import java.util.HashMap;
 
 class TestNasdaqScanner {
     private NasdaqScanner nasdaqScraper = new NasdaqScanner();
+
+    @Test
+    void TestGetNasdaqSymbol() {
+        HashMap<String, NasdaqSymbol> symbol = nasdaqScraper.ParsePageTest(1, 10);
+        Assertions.assertNotNull(symbol);
+    }
 
     @Test
     void TestGetCount_Stock() throws Exception {
