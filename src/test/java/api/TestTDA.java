@@ -1,6 +1,7 @@
 package api;
 
 import com.api.TimeSpanException;
+import com.models.FundamentalResponse;
 import com.models.History;
 import com.models.Quote;
 import com.api.BadRequestException;
@@ -24,6 +25,13 @@ class TestTDA {
         Assertions.assertTrue(quote.getTotalVolume() > 0);
         Assertions.assertTrue(quote.get52WkHigh() > 0);
         Assertions.assertTrue(quote.get52WkLow() > 0);
+    }
+
+    @Test
+    void TestGetFundamental() {
+        Assertions.assertNotNull(tda.getFundamental("AAPL"));
+        Assertions.assertNotNull(tda.getFundamental("UWT"));
+        Assertions.assertNull(tda.getFundamental("InvalidSymbol"));
     }
 
     @Test
@@ -68,12 +76,12 @@ class TestTDA {
     void TestGetHistory1D1MCandlesExtendedHours() {
         History history = null;
         try {
-            history = tda.getHistory("AAPL", "25-09-2019", "26-09-2019", "1D", "1M", true);
+            history = tda.getHistory("AAPL", "08-10-2019", "09-10-2019", "1D", "1M", true);
         } catch (BadRequestException | ParseException | TimeSpanException e) {
             e.printStackTrace();
         }
         Assertions.assertNotNull(history);
-        Assertions.assertEquals(1136, history.getCandles().size());
+        Assertions.assertEquals(1430, history.getCandles().size());
     }
 
     @Test

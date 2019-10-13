@@ -1,5 +1,6 @@
 package com.api;
 
+import com.models.FundamentalResponse;
 import com.models.History;
 import com.models.Quote;
 import com.util.DateParser;
@@ -25,6 +26,25 @@ public class TDA {
                 .asJson();
 
         return new Quote(response.getBody().getObject().getJSONObject(symbol));
+    }
+
+    /**
+     * @param symbol The symbol used to search an asset's fundamentals.
+     * @return Returns a fundamental response if the symbol is valid, otherwise will return null.
+     */
+    public FundamentalResponse getFundamental(String symbol) {
+        String url = "https://api.tdameritrade.com/v1/instruments";
+        HttpResponse<JsonNode> response = Unirest.get(url)
+                .queryString("apiKey", auth.getClientId())
+                .queryString("symbol", symbol)
+                .queryString("projection", "fundamental")
+                .header("Authorization", "Bearer " + auth.getAccessToken())
+                .asJson();
+        if (response.getBody().getObject().has(symbol)) {
+            JSONObject object = response.getBody().getObject().getJSONObject(symbol);
+            return new FundamentalResponse(symbol, object);
+        }
+        return null;
     }
 
     public History getHistory(String symbol) throws BadRequestException, ParseException, TimeSpanException {
