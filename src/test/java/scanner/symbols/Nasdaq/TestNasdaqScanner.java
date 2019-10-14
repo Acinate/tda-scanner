@@ -1,7 +1,7 @@
 package scanner.symbols.Nasdaq;
 
-import com.models.NasdaqSymbol;
-import com.models.Symbol;
+import com.models.responses.NasdaqSymbol;
+import com.models.SymbolOld;
 import com.scanner.symbols.Nasdaq.NasdaqScanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -69,7 +69,7 @@ class TestNasdaqScanner {
         Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
                 int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         method.invoke(nasdaqScraper, "futures", 10, 0, symbols);
         Assertions.assertNotNull(symbols);
         Assertions.assertTrue(symbols.size() > 0);
@@ -80,7 +80,7 @@ class TestNasdaqScanner {
         Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
                 int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> results = new HashMap<>();
+        HashMap<String, SymbolOld> results = new HashMap<>();
         method.invoke(nasdaqScraper, "futures", 10, Integer.MAX_VALUE, results);
         Assertions.assertNotNull(results);
         Assertions.assertEquals(0, results.size());
@@ -91,7 +91,7 @@ class TestNasdaqScanner {
         Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
                 int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         method.invoke(nasdaqScraper, "index", 10, 0, symbols);
         Assertions.assertNotNull(symbols);
         Assertions.assertTrue(symbols.size() > 0);
@@ -102,7 +102,7 @@ class TestNasdaqScanner {
         Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
                 int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         method.invoke(nasdaqScraper, "index", 10, Integer.MAX_VALUE, symbols);
         Assertions.assertNotNull(symbols);
         Assertions.assertEquals(0, symbols.size());
@@ -113,7 +113,7 @@ class TestNasdaqScanner {
         Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
                 int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         method.invoke(nasdaqScraper, "etf", 10, 0, symbols);
         Assertions.assertNotNull(symbols);
         Assertions.assertTrue(symbols.size() > 0);
@@ -124,7 +124,7 @@ class TestNasdaqScanner {
         Method method = NasdaqScanner.class.getDeclaredMethod("ParseRows", String.class, int.class,
                 int.class, HashMap.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         method.invoke(nasdaqScraper, "etf", 10, Integer.MAX_VALUE, symbols);
         Assertions.assertNotNull(symbols);
         Assertions.assertEquals(0, symbols.size());

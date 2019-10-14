@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="increased nasdaq scanner test coverage">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/database/DatabaseOld.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/database/TestDatabaseOld.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestScanSymbols.java" afterDir="false" />
+    <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="added symbol builder">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Asset.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Earnings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Symbol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestSymbolBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StockScanner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StockScanner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/TDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/TDA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/NasdaqSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/NasdaqSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/FundamentalResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/NasdaqSymbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/NasdaqSymbol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/SymbolOld.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/NYSE/NYSEScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/NYSE/NYSEScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/auth.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/database/TestDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/database/TestDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/api/TestTDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/api/TestTDA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/NYSE/TestNYSEScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/NYSE/TestNYSEScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/Nasdaq/TestNasdaqScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/Nasdaq/TestNasdaqScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestScanSymbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestScanSymbols.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/api/TDA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/api/TDA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/database/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/models/FundamentalResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/models/NasdaqSymbol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/models/Symbol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/NYSE/NYSEScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/NYSE/NYSEScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/Nasdaq/NasdaqScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/Nasdaq/NasdaqScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/auth.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/api/TestTDA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/api/TestTDA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/database/TestDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/database/TestDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/scanner/symbols/NYSE/TestNYSEScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/scanner/symbols/NYSE/TestNYSEScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/scanner/symbols/Nasdaq/TestNasdaqScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/scanner/symbols/Nasdaq/TestNasdaqScanner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/scanner/symbols/TestScanSymbols.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/scanner/symbols/TestScanSymbols.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +95,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestNasdaqScanner">
+  <component name="RunManager" selected="JUnit.TestSymbolBuilder.TestSymbolBuilder">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.com.scanner.Main" />
       <module name="StockScanner" />
@@ -105,22 +120,6 @@
       <option name="PACKAGE_NAME" value="scanner.symbols.Nasdaq" />
       <option name="MAIN_CLASS_NAME" value="scanner.symbols.Nasdaq.TestNasdaqScanner" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestNasdaqScanner.TestGetNasdaqSymbol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StockScanner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="scanner.symbols.Nasdaq.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="scanner.symbols.Nasdaq" />
-      <option name="MAIN_CLASS_NAME" value="scanner.symbols.Nasdaq.TestNasdaqScanner" />
-      <option name="METHOD_NAME" value="TestGetNasdaqSymbol" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,7 +156,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestScanSymbols.TestScanSymbols" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestScanSymbols.TestUpdateSymbols" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
@@ -167,7 +166,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="scanner.symbols" />
       <option name="MAIN_CLASS_NAME" value="scanner.symbols.TestScanSymbols" />
-      <option name="METHOD_NAME" value="TestScanSymbols" />
+      <option name="METHOD_NAME" value="TestUpdateSymbols" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSymbolBuilder.TestSymbolBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockScanner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="scanner.symbols.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="scanner.symbols" />
+      <option name="MAIN_CLASS_NAME" value="scanner.symbols.TestSymbolBuilder" />
+      <option name="METHOD_NAME" value="TestSymbolBuilder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,18 +191,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.TestNasdaqScanner" />
-      <item itemvalue="JUnit.TestScanSymbols.TestScanSymbols" />
-      <item itemvalue="JUnit.TestNasdaqScanner.TestGetNasdaqSymbol" />
       <item itemvalue="JUnit.TestNasdaqScanner.TestParsePage" />
       <item itemvalue="JUnit.TestNasdaqScanner.TestParseRows_Future" />
+      <item itemvalue="JUnit.TestScanSymbols.TestUpdateSymbols" />
+      <item itemvalue="JUnit.TestSymbolBuilder.TestSymbolBuilder" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSymbolBuilder.TestSymbolBuilder" />
+        <item itemvalue="JUnit.TestScanSymbols.TestUpdateSymbols" />
         <item itemvalue="JUnit.TestNasdaqScanner" />
         <item itemvalue="JUnit.TestNasdaqScanner.TestParseRows_Future" />
         <item itemvalue="JUnit.TestNasdaqScanner.TestParsePage" />
-        <item itemvalue="JUnit.TestNasdaqScanner.TestGetNasdaqSymbol" />
-        <item itemvalue="JUnit.TestScanSymbols.TestScanSymbols" />
       </list>
     </recent_temporary>
   </component>
@@ -279,7 +294,42 @@
       <option name="project" value="LOCAL" />
       <updated>1570970703984</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fixed and refactored nasdaq scanner">
+      <created>1570993422043</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1570993422043</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added database interface">
+      <created>1570993456375</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1570993456375</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added symbol scanner">
+      <created>1570993547693</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1570993547693</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added more null checks">
+      <created>1570993569789</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1570993569789</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updates">
+      <created>1570993581669</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1570993581669</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,10 +356,29 @@
     <MESSAGE value="fixed bug with nasdaq stock scanner" />
     <MESSAGE value="added fundamental model, response parser and tests" />
     <MESSAGE value="Added nasdaq symbol model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added nasdaq symbol model" />
+    <MESSAGE value="fixed and refactored nasdaq scanner" />
+    <MESSAGE value="added database interface" />
+    <MESSAGE value="added symbol scanner" />
+    <MESSAGE value="added more null checks" />
+    <MESSAGE value="updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/database/Database.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="path" />

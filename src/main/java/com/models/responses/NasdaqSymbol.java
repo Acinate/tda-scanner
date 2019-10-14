@@ -1,4 +1,4 @@
-package com.models;
+package com.models.responses;
 
 import kong.unirest.json.JSONObject;
 

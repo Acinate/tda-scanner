@@ -1,7 +1,7 @@
 package com.scanner.symbols.Nasdaq;
 
-import com.models.NasdaqSymbol;
-import com.models.Symbol;
+import com.models.responses.NasdaqSymbol;
+import com.models.SymbolOld;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
@@ -86,7 +86,7 @@ public class NasdaqScanner {
      *
      * @return a hash map that maps symbol names to their symbol metadata
      */
-    public HashMap<String, Symbol> GetEtf() {
+    public HashMap<String, SymbolOld> GetEtf() {
         return GetRows("etf");
     }
 
@@ -95,7 +95,7 @@ public class NasdaqScanner {
      *
      * @return a hash map that maps symbol names to their symbol metadata
      */
-    public HashMap<String, Symbol> GetIndex() {
+    public HashMap<String, SymbolOld> GetIndex() {
         return GetRows("index");
     }
 
@@ -104,7 +104,7 @@ public class NasdaqScanner {
      *
      * @return a hash map that maps symbol names to their symbol metadata
      */
-    public HashMap<String, Symbol> GetFutures() {
+    public HashMap<String, SymbolOld> GetFutures() {
         return GetRows("futures");
     }
 
@@ -114,11 +114,11 @@ public class NasdaqScanner {
      * @param asset the assetType to retrieve symbols for
      * @return a hash map that maps symbol names to their symbol metadata
      */
-    private HashMap<String, Symbol> GetRows(String asset) {
+    private HashMap<String, SymbolOld> GetRows(String asset) {
         int count = GetCount(asset);
         int limit = 10;
         int offset = 0;
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         for (offset = 0; offset < count; offset += limit) {
             ParseRows(asset, limit, offset, symbols);
         }
@@ -133,7 +133,7 @@ public class NasdaqScanner {
      * @param offset  the current pageOffset
      * @param symbols the hash map that holds the symbols retrieved from scanning
      */
-    private void ParseRows(String asset, int limit, int offset, HashMap<String, Symbol> symbols) {
+    private void ParseRows(String asset, int limit, int offset, HashMap<String, SymbolOld> symbols) {
         String url = "https://api.nasdaq.com/api/screener/" + asset + "?limit=" + limit + "&offset=" + offset;
         HttpResponse<JsonNode> response = Unirest.get(url).asJson();
         if (response.isSuccess() && response.getBody().getObject().get("data") != null) {
@@ -147,7 +147,7 @@ public class NasdaqScanner {
                     String ticker = ((JSONObject) row).getString("symbol");
                     String exchange = "Nasdaq";
                     String assetType = GetAssetType(asset);
-                    Symbol symbol = new Symbol(ticker, exchange, assetType);
+                    SymbolOld symbol = new SymbolOld(ticker, exchange, assetType);
                     symbols.put(symbol.getTicker(), symbol);
                 }
             }

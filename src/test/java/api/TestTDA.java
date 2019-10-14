@@ -1,7 +1,6 @@
 package api;
 
 import com.api.TimeSpanException;
-import com.models.FundamentalResponse;
 import com.models.History;
 import com.models.Quote;
 import com.api.BadRequestException;

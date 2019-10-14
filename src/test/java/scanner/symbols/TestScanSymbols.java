@@ -10,4 +10,9 @@ public class TestScanSymbols {
     public void TestScanSymbols() {
         scanner.ScanSymbols();
     }
+
+    @Test
+    public void TestUpdateSymbols() {
+        scanner.UpdateSymbols();
+    }
 }

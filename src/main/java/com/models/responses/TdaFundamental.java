@@ -1,4 +1,4 @@
-package com.models;
+package com.models.responses;
 
 import kong.unirest.json.JSONObject;
 
@@ -7,8 +7,8 @@ import java.util.Date;
 /**
  * An object that models a response from TDA API using the the instruments endpoint.
  */
-public class FundamentalResponse {
-    public FundamentalResponse(String symbol, JSONObject fundamental) {
+public class TdaFundamental {
+    public TdaFundamental(String symbol, JSONObject fundamental) {
         this.symbol = symbol;
         this.cusip = fundamental.getString("cusip");
         this.description = fundamental.getString("description");
@@ -110,7 +110,6 @@ public class FundamentalResponse {
     private double vol1DayAvg;
     private double vol10DayAvg;
     private double vol3MonthAvg;
-    private Date lastUpdated;
 
     public String getSymbol() {
         return symbol;
@@ -262,6 +261,10 @@ public class FundamentalResponse {
 
     public double getSharesOutstanding() {
         return sharesOutstanding;
+    }
+
+    public double getMarketCapFloat() {
+        return marketCapFloat;
     }
 
     public double getMarketCap() {

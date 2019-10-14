@@ -1,6 +1,6 @@
 package scanner.symbols.NYSE;
 
-import com.models.Symbol;
+import com.models.SymbolOld;
 import com.scanner.symbols.NYSE.NYSEScanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -47,7 +47,7 @@ class TestNYSEScanner {
     void TestGetPage_Stock() throws Exception {
         Method method = NYSEScanner.class.getDeclaredMethod("GetPage", String.class, int.class, int.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = (HashMap<String, Symbol>) method.invoke(nyseScanner, "stock", 1, 10);
+        HashMap<String, SymbolOld> symbols = (HashMap<String, SymbolOld>) method.invoke(nyseScanner, "stock", 1, 10);
         Assertions.assertNotNull(symbols);
         Assertions.assertEquals(10, symbols.size());
     }
@@ -56,7 +56,7 @@ class TestNYSEScanner {
     void TestGetPage_Index() throws Exception {
         Method method = NYSEScanner.class.getDeclaredMethod("GetPage", String.class, int.class, int.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = (HashMap<String, Symbol>) method.invoke(nyseScanner, "index", 1, 10);
+        HashMap<String, SymbolOld> symbols = (HashMap<String, SymbolOld>) method.invoke(nyseScanner, "index", 1, 10);
         Assertions.assertNotNull(symbols);
         Assertions.assertEquals(10, symbols.size());
     }
@@ -65,7 +65,7 @@ class TestNYSEScanner {
     void TestGetPage_Etf() throws Exception {
         Method method = NYSEScanner.class.getDeclaredMethod("GetPage", String.class, int.class, int.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = (HashMap<String, Symbol>) method.invoke(nyseScanner, "etf", 1, 10);
+        HashMap<String, SymbolOld> symbols = (HashMap<String, SymbolOld>) method.invoke(nyseScanner, "etf", 1, 10);
         Assertions.assertNotNull(symbols);
         Assertions.assertEquals(10, symbols.size());
     }
@@ -74,7 +74,7 @@ class TestNYSEScanner {
     void TestGetPage_Invalid() throws Exception {
         Method method = NYSEScanner.class.getDeclaredMethod("GetPage", String.class, int.class, int.class);
         method.setAccessible(true);
-        HashMap<String, Symbol> symbols = (HashMap<String, Symbol>) method.invoke(nyseScanner, "invalidAsset", 1, 10);
+        HashMap<String, SymbolOld> symbols = (HashMap<String, SymbolOld>) method.invoke(nyseScanner, "invalidAsset", 1, 10);
         Assertions.assertNotNull(symbols);
         Assertions.assertEquals(0, symbols.size());
     }

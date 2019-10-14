@@ -1,7 +1,7 @@
 package com.scanner.symbols.NYSE;
 
 import com.google.gson.Gson;
-import com.models.Symbol;
+import com.models.SymbolOld;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
 import kong.unirest.Unirest;
@@ -13,24 +13,24 @@ import java.util.Map;
 
 public class NYSEScanner {
 
-    public HashMap<String, Symbol> GetAllSymbols() {
+    public HashMap<String, SymbolOld> GetAllSymbols() {
         return GetPages("");
     }
 
-    public HashMap<String, Symbol> GetStockSymbols() {
+    public HashMap<String, SymbolOld> GetStockSymbols() {
         return GetPages("stock");
     }
 
-    public HashMap<String, Symbol> GetIndexSymbols() {
+    public HashMap<String, SymbolOld> GetIndexSymbols() {
         return GetPages("index");
     }
 
-    public HashMap<String, Symbol> GetEtfSymbols() {
+    public HashMap<String, SymbolOld> GetEtfSymbols() {
         return GetPages("etf");
     }
 
-    private HashMap<String, Symbol> GetPages(String asset) {
-        HashMap<String, Symbol> symbols = new HashMap<>();
+    private HashMap<String, SymbolOld> GetPages(String asset) {
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         int count = GetCount(asset);
         int page = 1;
         int pageSize = 10;
@@ -40,9 +40,9 @@ public class NYSEScanner {
         return symbols;
     }
 
-    private HashMap<String, Symbol> GetPage(String asset, int page, int pageSize) {
+    private HashMap<String, SymbolOld> GetPage(String asset, int page, int pageSize) {
         String url = "https://www.nyse.com/api/quotes/filter";
-        HashMap<String, Symbol> symbols = new HashMap<>();
+        HashMap<String, SymbolOld> symbols = new HashMap<>();
         HttpResponse<JsonNode> response = Unirest.post(url)
                 .body(GetBody(GetAssetType(asset), page, pageSize))
                 .headers(GetHeaders())
@@ -55,7 +55,7 @@ public class NYSEScanner {
                 String instrumentType = ((JSONObject) row).getString("instrumentType");
                 String assetType = ParseInstrumentType(instrumentType);
                 String exchange = "NYSE";
-                Symbol symbol = new Symbol(ticker, exchange, ParseInstrumentType(assetType));
+                SymbolOld symbol = new SymbolOld(ticker, exchange, ParseInstrumentType(assetType));
                 symbols.put(symbol.getTicker(), symbol);
             }
         }

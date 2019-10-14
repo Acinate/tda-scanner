@@ -1,6 +1,8 @@
 package com.database;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -29,10 +31,34 @@ public class Database {
         }
     }
 
+    /**
+     * Inserts a list of symbols into the Symbol table
+     *
+     * @param symbols the list of symbols to insert
+     */
     public void insertSymbols(Set<String> symbols) {
         for (String symbol : symbols) {
             insertSymbol(symbol);
         }
+    }
+
+    /**
+     * Retrieves all symbols from the Symbol table
+     */
+    public HashSet<String> getSymbols() {
+        try {
+            Statement stmt = connection.createStatement();
+            ResultSet resultSet = stmt.executeQuery("SELECT symbol FROM symbol");
+            HashSet<String> symbols = new HashSet<>();
+            while (resultSet.next()) {
+                String symbol = resultSet.getString("symbol");
+                symbols.add(symbol);
+            }
+            return symbols;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     /**
