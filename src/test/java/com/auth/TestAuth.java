@@ -1,4 +1,4 @@
-package auth;
+package com.auth;
 
 import com.auth.Auth;
 import org.junit.jupiter.api.Assertions;

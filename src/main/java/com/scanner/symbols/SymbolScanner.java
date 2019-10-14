@@ -1,6 +1,7 @@
 package com.scanner.symbols;
 
 import com.database.Database;
+import com.models.database.Symbol;
 import com.models.responses.NasdaqSymbol;
 import com.scanner.symbols.Nasdaq.NasdaqScanner;
 
@@ -16,9 +17,9 @@ public class SymbolScanner {
     /**
      * Scans all Symbols and Inserts them into the Market Database
      */
-    public void ScanSymbols() {
+    public void scanSymbols() {
         NasdaqScanner nasdaqScanner = new NasdaqScanner();
-        HashMap<String, NasdaqSymbol> nasdaqSymbols = nasdaqScanner.GetStock();
+        HashMap<String, NasdaqSymbol> nasdaqSymbols = nasdaqScanner.scanStocks();
         Database database = new Database();
         System.out.println(nasdaqSymbols.size());
         database.insertSymbols(nasdaqSymbols.keySet());
@@ -27,12 +28,15 @@ public class SymbolScanner {
     /**
      * Retrieves Symbols from our Database and updates their metadata.
      */
-    public void UpdateSymbols() {
+    public void updateSymbols() {
         Set<String> symbols = new HashSet<>();
         Database database = new Database();
         symbols = database.getSymbols();
+        SymbolBuilder builder = new SymbolBuilder();
         for (String symbol : symbols) {
-
+            System.out.println("Scanning: " + symbol);
+            Symbol s = builder.buildSymbol(symbol);
+            database.insertAsset(s.getSymbol(), s.getAsset());
         }
     }
 }

@@ -1,11 +1,24 @@
 package com.models.database;
 
+import com.models.responses.TdaFundamental;
+
 import java.util.Date;
 
 /**
  * Holds Dividend information for Symbol. Uses data from TdaFundamental.
  */
 public class Dividend {
+    public void applyDataSet(TdaFundamental dataset) {
+        if (dataset != null) {
+            amount = dataset.getDividendAmount();
+            yield = dataset.getDividendYield();
+            date = dataset.getDividendDate();
+            growthRate3Year = dataset.getDivGrowthRate3Year();
+            payAmount = dataset.getDividendPayAmount();
+            payDate = dataset.getDividendPayDate();
+        }
+    }
+
     private double amount;
     private double yield;
     private String date;

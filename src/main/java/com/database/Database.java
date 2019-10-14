@@ -1,5 +1,8 @@
 package com.database;
 
+import com.models.database.Asset;
+import com.models.database.Symbol;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -39,6 +42,24 @@ public class Database {
     public void insertSymbols(Set<String> symbols) {
         for (String symbol : symbols) {
             insertSymbol(symbol);
+        }
+    }
+
+    public void insertAsset(String symbol, Asset asset) {
+        String sql = "INSERT INTO asset (symbol, cusip, description, exchange, " +
+                "asset_type, " +
+                "sector) VALUES ('" + symbol + "','" + asset.getCusip() + "','" + asset.getDescription() + "','"
+                + asset.getExchange() + "','" + asset.getAssetType() + "','" + asset.getSector() + "')";
+        try {
+            Statement stmt = connection.createStatement();
+            int result = stmt.executeUpdate(sql);
+            System.out.println("Added " + symbol);
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                System.out.println(symbol + " already exists");
+            } else {
+                e.printStackTrace();
+            }
         }
     }
 

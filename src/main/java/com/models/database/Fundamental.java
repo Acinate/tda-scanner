@@ -1,9 +1,30 @@
 package com.models.database;
 
+import com.models.responses.NasdaqSummary;
+import com.models.responses.TdaFundamental;
+
 /**
  * Holds Fundamental information for Symbol. Uses data from TdaFundamental.
  */
 public class Fundamental {
+
+    public void applyDataSet(TdaFundamental dataset) {
+        if (dataset != null) {
+            high52 = dataset.getHigh52();
+            low52 = dataset.getLow52();
+            sharesOutstanding = dataset.getSharesOutstanding();
+            marketCapFloat = dataset.getMarketCapFloat();
+            marketCap = dataset.getMarketCap();
+            bookValuePerShare = dataset.getBookValuePerShare();
+            shortIntToFloat = dataset.getShortIntToFloat();
+            shortIntDayToCover = dataset.getShortIntDayToCover();
+            beta = dataset.getBeta();
+            vol1DayAvg = dataset.getVol1DayAvg();
+            vol10DayAvg = dataset.getVol10DayAvg();
+            vol3MonthAvg = dataset.getVol3MonthAvg();
+        }
+    }
+
     private double high52;
     private double low52;
     private double sharesOutstanding;

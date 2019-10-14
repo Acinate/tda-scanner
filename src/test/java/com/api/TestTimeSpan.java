@@ -1,4 +1,4 @@
-package api;
+package com.api;
 
 import com.api.TimeSpan;
 import org.junit.jupiter.api.Assertions;

@@ -1,9 +1,42 @@
 package com.models.database;
 
+import com.models.responses.TdaFundamental;
+
 /**
  * Holds Earnings information for Symbol. Uses data from TdaFundamental.
  */
 public class Earnings {
+    public void applyDataSet(TdaFundamental dataset) {
+        if (dataset != null) {
+            peRatio = dataset.getPeRatio();
+            pegRatio = dataset.getPegRatio();
+            pbRatio = dataset.getPbRatio();
+            prRatio = dataset.getPrRatio();
+            pcfRatio = dataset.getPcfRatio();
+            grossMarginTtm = dataset.getGrossMarginTTM();
+            grossMarginMrq = dataset.getGrossMarginMRQ();
+            netProfitMarginTtm = dataset.getNetProfitMarginTTM();
+            netProfitMarginMrq = dataset.getNetProfitMarginMRQ();
+            operatingMarginTtm = dataset.getOperatingMarginTTM();
+            operatingMarginMrq = dataset.getOperatingMarginMRQ();
+            returnOnEquity = dataset.getReturnOnEquity();
+            returnOnAssets = dataset.getReturnOnAssets();
+            returnOnInvestment = dataset.getReturnOnInvestment();
+            quickRatio = dataset.getQuickRatio();
+            currentRatio = dataset.getCurrentRatio();
+            interestCoverage = dataset.getInterestCoverage();
+            totalDebtToCapital = dataset.getTotalDebtToCapital();
+            ltDebtToEquity = dataset.getLtDebtToCapital();
+            epsTtm = dataset.getEpsTTM();
+            epsChangePercentTtm = dataset.getEpsChangePercentTTM();
+            epsChangeYear = dataset.getEpsChangeYear();
+            epsChange = dataset.getEpsChange();
+            revChangeYear = dataset.getRevChangeYear();
+            revChangeTtm = dataset.getRevChangeTTM();
+            revChangeIn = dataset.getRevChangeIn();
+        }
+    }
+
     private double peRatio;
     private double pegRatio;
     private double pbRatio;

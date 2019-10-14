@@ -1,4 +1,4 @@
-package database;
+package com.database;
 
 import com.api.TDA;
 import com.database.DatabaseOld;

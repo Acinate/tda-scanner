@@ -1,4 +1,4 @@
-package api;
+package com.api;
 
 import com.api.TimeSpanException;
 import com.models.History;

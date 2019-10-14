@@ -1,9 +1,27 @@
 package com.models.database;
 
+import com.models.responses.NasdaqSummary;
+import com.models.responses.TdaFundamental;
+
 /**
  * Holds asset information for Symbols, uses information from TdaFundamental and NasdaqSymbol
  */
 public class Asset {
+    public void applyDataSet(TdaFundamental dataset) {
+        if (dataset != null) {
+            cusip = dataset.getCusip();
+            description = dataset.getDescription();
+            exchange = dataset.getExchange();
+            assetType = dataset.getAssetType();
+        }
+    }
+
+    public void applyDataSet(NasdaqSummary dataset) {
+        if (dataset != null) {
+            sector = dataset.getSector();
+        }
+    }
+
     private String cusip;
     private String description;
     private String exchange;

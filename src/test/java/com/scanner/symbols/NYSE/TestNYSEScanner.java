@@ -1,7 +1,6 @@
-package scanner.symbols.NYSE;
+package com.scanner.symbols.NYSE;
 
 import com.models.SymbolOld;
-import com.scanner.symbols.NYSE.NYSEScanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

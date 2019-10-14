@@ -1,6 +1,5 @@
-package scanner.symbols;
+package com.scanner.symbols;
 
-import com.scanner.symbols.SymbolBuilder;
 import org.junit.Test;
 
 public class TestSymbolBuilder {
