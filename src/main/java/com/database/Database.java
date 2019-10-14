@@ -1,7 +1,7 @@
 package com.database;
 
 import com.models.database.Asset;
-import com.models.database.Symbol;
+import com.models.database.Fundamental;
 
 import java.sql.*;
 import java.util.HashSet;
@@ -44,14 +44,13 @@ public class Database {
         }
     }
 
+    /**
+     * Inserts an Asset record into the Assets table
+     *
+     * @param symbol the asset's corresponding symbol
+     * @param asset  the asset object to insert
+     */
     public void insertAsset(String symbol, Asset asset) {
-        if (asset == null) {
-            System.out.println("asset null");
-        } else if (asset.getCusip() == null) {
-            System.out.println("found one");
-        } else if (asset.getCusip().equals("null")) {
-            System.out.println("found one");
-        }
         String sql = "INSERT INTO asset " +
                 "(symbol, cusip, description, " +
                 "exchange, asset_type, sector) " +
@@ -77,7 +76,13 @@ public class Database {
         }
     }
 
-    public void updateAsset(String symbol, Asset asset) {
+    /**
+     * Updates an existing Asset record in the Assets table
+     *
+     * @param symbol the asset's corresponding symbol
+     * @param asset  the asset object to update
+     */
+    private void updateAsset(String symbol, Asset asset) {
         String sql = "UPDATE asset " +
                 "SET symbol = '" + symbol + "', " +
                 "cusip = '" + asset.getCusip() + "', " +
@@ -96,13 +101,41 @@ public class Database {
         }
     }
 
+    public void insertFundamental(String symbol, Fundamental fundamental) {
+        String sql = "INSERT INTO fundamental " +
+                "(symbol, high52, low52, shares_outstanding, market_cap_float," +
+                "market_cap, book_value_per_share, short_int_to_float," +
+                "short_int_day_to_cover, beta, vol_1_day_avg, vol_10_day_avg," +
+                "vol_3_month_avg) VALUES ('" + symbol + "', " + fundamental.getHigh52() + "," +
+                fundamental.getLow52() + ", " + fundamental.getSharesOutstanding() + "," +
+                fundamental.getMarketCapFloat() + "," + fundamental.getMarketCap() + "," +
+                fundamental.getBookValuePerShare() + ", " + fundamental.getShortIntToFloat() + ", " +
+                fundamental.getShortIntDayToCover() + "," + fundamental.getBeta() + ", " +
+                fundamental.getVol1DayAvg() + ", " + fundamental.getVol10DayAvg() + ", " +
+                fundamental.getVol3MonthAvg() + ")";
+        try {
+            Statement stmt = connection.createStatement();
+            int result = stmt.executeUpdate(sql);
+            System.out.println("Added: " + symbol);
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                System.out.println(symbol + " already exists");
+                // Run an update query
+                // updateFundamental(symbol, fundamental);
+            } else {
+                System.out.println(sql);
+                e.printStackTrace();
+            }
+        }
+    }
+
     /**
      * Retrieves all symbols from the Symbol table
      */
     public HashSet<String> getSymbols() {
         try {
             Statement stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT symbol FROM asset WHERE cusip = 'null'");
+            ResultSet resultSet = stmt.executeQuery("SELECT symbol FROM asset WHERE cusip != 'null'");
             HashSet<String> symbols = new HashSet<>();
             while (resultSet.next()) {
                 String symbol = resultSet.getString("symbol");

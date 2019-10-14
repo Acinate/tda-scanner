@@ -4,11 +4,10 @@
     <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/responses/NasdaqSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/NasdaqSummary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/auth.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/database/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/auth.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -318,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571074500978</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="added asset scanner and database interface">
+      <created>1571081573994</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1571081573995</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -352,7 +358,8 @@
     <MESSAGE value="updates" />
     <MESSAGE value="added symbol builder" />
     <MESSAGE value="added symbol builder and scanner" />
-    <option name="LAST_COMMIT_MESSAGE" value="added symbol builder and scanner" />
+    <MESSAGE value="added asset scanner and database interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="added asset scanner and database interface" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

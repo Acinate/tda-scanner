@@ -36,7 +36,8 @@ public class SymbolScanner {
         for (String symbol : symbols) {
             System.out.println("Scanning: " + symbol);
             Symbol s = builder.buildSymbol(symbol);
-            database.insertAsset(s.getSymbol(), s.getAsset());
+            // database.insertAsset(s.getSymbol(), s.getAsset());
+            database.insertFundamental(s.getSymbol(), s.getFundamental());
         }
     }
 }
