@@ -5,7 +5,7 @@ import kong.unirest.json.JSONObject;
 public class NasdaqSummary {
 
     public NasdaqSummary(JSONObject data) {
-        if (data.has("summaryData")) {
+        if (data.has("summaryData") && data.getClass() == JSONObject.class) {
             JSONObject summary = data.getJSONObject("summaryData");
             if (summary.has("Sector")) {
                 this.sector = summary.getJSONObject("Sector").getString("value");

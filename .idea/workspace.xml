@@ -2,51 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/NasdaqSummary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqAssetScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqStockScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqSummaryScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/Nasdaq/NasdaqAssetScannerTestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/Nasdaq/NasdaqScannerTestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/Nasdaq/NasdaqStockScannerTestCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/Nasdaq/NasdaqSummaryScannerTestCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Asset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Earnings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Earnings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/responses/NasdaqSummary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/NasdaqSummary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Nasdaq/NasdaqScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/auth.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/api/TestTDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/api/TestTDA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/api/TestTimeSpan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/api/TestTimeSpan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/auth/TestAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/auth/TestAuth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/database/TestDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/database/TestDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/database/TestDatabaseOld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/database/TestDatabaseOld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/NYSE/TestNYSEScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/NYSE/TestNYSEScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/Nasdaq/TestNasdaqScanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestScanSymbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/SymbolScannerTestCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/scanner/symbols/TestSymbolBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/TestSymbolBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/database/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/Nasdaq/NasdaqScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/Nasdaq/NasdaqScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/auth.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/json/data/2019/AAPL/04/05-04-2019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/json/data/2019/AAPL/09/03-09-2019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/json/data/2019/AAPL/09/04-09-2019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/json/data/2019/AAPL/09/05-09-2019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/json/data/2019/AAPL/09/06-09-2019.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/api/TestTDA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/api/TestTimeSpan.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/auth/TestAuth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/database/TestDatabase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/database/TestDatabaseOld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/scanner/symbols/NYSE/TestNYSEScanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/scanner/symbols/Nasdaq/TestNasdaqScanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/scanner/symbols/TestScanSymbols.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -348,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571015855571</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added symbol builder and scanner">
+      <created>1571074500977</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1571074500978</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -381,19 +351,11 @@
     <MESSAGE value="added more null checks" />
     <MESSAGE value="updates" />
     <MESSAGE value="added symbol builder" />
-    <option name="LAST_COMMIT_MESSAGE" value="added symbol builder" />
+    <MESSAGE value="added symbol builder and scanner" />
+    <option name="LAST_COMMIT_MESSAGE" value="added symbol builder and scanner" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/database/Database.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="path" />

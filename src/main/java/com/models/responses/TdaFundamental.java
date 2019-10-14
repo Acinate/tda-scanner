@@ -2,8 +2,6 @@ package com.models.responses;
 
 import kong.unirest.json.JSONObject;
 
-import java.util.Date;
-
 /**
  * An object that models a response from TDA API using the the instruments endpoint.
  */
@@ -12,6 +10,7 @@ public class TdaFundamental {
         this.symbol = symbol;
         this.cusip = fundamental.getString("cusip");
         this.description = fundamental.getString("description");
+        this.description = this.description.replace("'", "''");
         this.exchange = fundamental.getString("exchange");
         this.assetType = fundamental.getString("assetType");
         JSONObject f = fundamental.getJSONObject("fundamental");

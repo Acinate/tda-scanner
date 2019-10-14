@@ -42,6 +42,16 @@ public class SymbolBuilder {
         symbol.setEarnings(earnings);
         symbol.setDividend(dividend);
 
+        if (symbol.getAsset().getCusip() == null) {
+            System.out.println("Error retrieving asset information for " + symbol.getSymbol() +
+                    ", retrying again in 10 seconds.");
+            try {
+                Thread.sleep(15000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return buildSymbol(s);
+        }
         return symbol;
     }
 }

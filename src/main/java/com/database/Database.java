@@ -4,7 +4,6 @@ import com.models.database.Asset;
 import com.models.database.Symbol;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -46,20 +45,54 @@ public class Database {
     }
 
     public void insertAsset(String symbol, Asset asset) {
-        String sql = "INSERT INTO asset (symbol, cusip, description, exchange, " +
-                "asset_type, " +
-                "sector) VALUES ('" + symbol + "','" + asset.getCusip() + "','" + asset.getDescription() + "','"
-                + asset.getExchange() + "','" + asset.getAssetType() + "','" + asset.getSector() + "')";
+        if (asset == null) {
+            System.out.println("asset null");
+        } else if (asset.getCusip() == null) {
+            System.out.println("found one");
+        } else if (asset.getCusip().equals("null")) {
+            System.out.println("found one");
+        }
+        String sql = "INSERT INTO asset " +
+                "(symbol, cusip, description, " +
+                "exchange, asset_type, sector) " +
+                "VALUES ('" + symbol + "', " +
+                "'" + asset.getCusip() + "', " +
+                "'" + asset.getDescription() + "', " +
+                "'" + asset.getExchange() + "', " +
+                "'" + asset.getAssetType() + "', " +
+                "'" + asset.getSector() + "')";
         try {
             Statement stmt = connection.createStatement();
             int result = stmt.executeUpdate(sql);
-            System.out.println("Added " + symbol);
+            System.out.println("Added: " + symbol);
         } catch (SQLException e) {
             if (e.getErrorCode() == 1062) {
                 System.out.println(symbol + " already exists");
+                // Run an update query
+                updateAsset(symbol, asset);
             } else {
+                System.out.println(sql);
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void updateAsset(String symbol, Asset asset) {
+        String sql = "UPDATE asset " +
+                "SET symbol = '" + symbol + "', " +
+                "cusip = '" + asset.getCusip() + "', " +
+                "description = '" + asset.getDescription() + "', " +
+                "exchange = '" + asset.getExchange() + "', " +
+                "asset_type = '" + asset.getAssetType() + "', " +
+                "sector = '" + asset.getSector() + "' " +
+                "WHERE symbol = '" + symbol + "';";
+        try {
+            Statement stmt = connection.createStatement();
+            int result = stmt.executeUpdate(sql);
+            System.out.println("Updated: " + symbol);
+        } catch (SQLException e) {
+            System.out.println(sql);
+            e.printStackTrace();
         }
     }
 
@@ -69,7 +102,7 @@ public class Database {
     public HashSet<String> getSymbols() {
         try {
             Statement stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery("SELECT symbol FROM symbol");
+            ResultSet resultSet = stmt.executeQuery("SELECT symbol FROM asset WHERE cusip = 'null'");
             HashSet<String> symbols = new HashSet<>();
             while (resultSet.next()) {
                 String symbol = resultSet.getString("symbol");
