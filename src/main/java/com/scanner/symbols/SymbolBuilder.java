@@ -1,9 +1,9 @@
 package com.scanner.symbols;
 
-import com.api.TDA;
 import com.models.database.*;
 import com.models.responses.NasdaqSummary;
 import com.models.responses.TdaFundamental;
+import com.scanner.symbols.Ameritrade.AmeritradeScanner;
 import com.scanner.symbols.Nasdaq.NasdaqScanner;
 
 /**
@@ -15,8 +15,8 @@ public class SymbolBuilder {
     public Symbol buildSymbol(String s) {
         Symbol symbol = new Symbol(s);
 
-        TDA tda = new TDA();
-        TdaFundamental tdaFundamental = tda.getFundamental(s);
+        AmeritradeScanner ameritradeScanner = new AmeritradeScanner();
+        TdaFundamental tdaFundamental = ameritradeScanner.getFundamental(s);
         NasdaqScanner nasdaqScanner = new NasdaqScanner();
         NasdaqSummary nasdaqSummary = nasdaqScanner.getSummary(s, "Stock");
 
@@ -44,9 +44,9 @@ public class SymbolBuilder {
 
         if (symbol.getAsset().getCusip() == null) {
             System.out.println("Error retrieving asset information for " + symbol.getSymbol() +
-                    ", retrying again in 10 seconds.");
+                    ", retrying again in 2 seconds.");
             try {
-                Thread.sleep(15000);
+                Thread.sleep(2000);
             } catch (Exception e) {
                 e.printStackTrace();
             }

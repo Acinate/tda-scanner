@@ -6,6 +6,12 @@ import kong.unirest.json.JSONObject;
  * An object that models a response from TDA API using the the instruments endpoint.
  */
 public class TdaFundamental {
+    /**
+     * Converts a JSONObject response into a TdaFundamental
+     *
+     * @param symbol      the symbol that belongs to the response
+     * @param fundamental the JSONObject to parse
+     */
     public TdaFundamental(String symbol, JSONObject fundamental) {
         this.symbol = symbol;
         this.cusip = fundamental.getString("cusip");
@@ -54,9 +60,9 @@ public class TdaFundamental {
         this.dividendPayAmount = f.getDouble("dividendPayAmount");
         this.dividendPayDate = f.getString("dividendPayDate");
         this.beta = f.getDouble("beta");
-        this.vol1DayAvg = f.getDouble("vol1DayAvg");
-        this.vol10DayAvg = f.getDouble("vol10DayAvg");
-        this.vol3MonthAvg = f.getDouble("vol3MonthAvg");
+        this.vol1DayAvg = f.getLong("vol1DayAvg");
+        this.vol10DayAvg = f.getLong("vol10DayAvg");
+        this.vol3MonthAvg = f.getLong("vol3MonthAvg");
     }
 
     private String symbol;
@@ -106,9 +112,9 @@ public class TdaFundamental {
     private double dividendPayAmount;
     private String dividendPayDate;
     private double beta;
-    private double vol1DayAvg;
-    private double vol10DayAvg;
-    private double vol3MonthAvg;
+    private long vol1DayAvg;
+    private long vol10DayAvg;
+    private long vol3MonthAvg;
 
     public String getSymbol() {
         return symbol;
@@ -298,15 +304,15 @@ public class TdaFundamental {
         return beta;
     }
 
-    public double getVol1DayAvg() {
+    public long getVol1DayAvg() {
         return vol1DayAvg;
     }
 
-    public double getVol10DayAvg() {
+    public long getVol10DayAvg() {
         return vol10DayAvg;
     }
 
-    public double getVol3MonthAvg() {
+    public long getVol3MonthAvg() {
         return vol3MonthAvg;
     }
 }

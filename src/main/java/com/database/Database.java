@@ -104,13 +104,11 @@ public class Database {
     public void insertFundamental(String symbol, Fundamental fundamental) {
         String sql = "INSERT INTO fundamental " +
                 "(symbol, high52, low52, shares_outstanding, market_cap_float," +
-                "market_cap, book_value_per_share, short_int_to_float," +
-                "short_int_day_to_cover, beta, vol_1_day_avg, vol_10_day_avg," +
+                "market_cap, book_value_per_share, beta, vol_1_day_avg, vol_10_day_avg," +
                 "vol_3_month_avg) VALUES ('" + symbol + "', " + fundamental.getHigh52() + "," +
                 fundamental.getLow52() + ", " + fundamental.getSharesOutstanding() + "," +
                 fundamental.getMarketCapFloat() + "," + fundamental.getMarketCap() + "," +
-                fundamental.getBookValuePerShare() + ", " + fundamental.getShortIntToFloat() + ", " +
-                fundamental.getShortIntDayToCover() + "," + fundamental.getBeta() + ", " +
+                fundamental.getBookValuePerShare() + ", " + fundamental.getBeta() + ", " +
                 fundamental.getVol1DayAvg() + ", " + fundamental.getVol10DayAvg() + ", " +
                 fundamental.getVol3MonthAvg() + ")";
         try {
@@ -121,11 +119,35 @@ public class Database {
             if (e.getErrorCode() == 1062) {
                 System.out.println(symbol + " already exists");
                 // Run an update query
-                // updateFundamental(symbol, fundamental);
+                updateFundamental(symbol, fundamental);
             } else {
                 System.out.println(sql);
                 e.printStackTrace();
             }
+        }
+    }
+
+    public void updateFundamental(String symbol, Fundamental fundamental) {
+        String sql = "UPDATE fundamental " +
+                "SET symbol = '" + symbol + "', " +
+                "high52 = " + fundamental.getHigh52() + ", " +
+                "low52 = " + fundamental.getLow52() + ", " +
+                "shares_outstanding = " + fundamental.getSharesOutstanding() + ", " +
+                "market_cap_float = " + fundamental.getMarketCapFloat() + ", " +
+                "market_cap = " + fundamental.getMarketCap() + ", " +
+                "book_value_per_share = " + fundamental.getBookValuePerShare() + ", " +
+                "beta = " + fundamental.getBeta() + ", " +
+                "vol_1_day_avg = " + fundamental.getVol1DayAvg() + ", " +
+                "vol_10_day_avg = " + fundamental.getVol10DayAvg() + ", " +
+                "vol_3_month_avg = " + fundamental.getVol3MonthAvg() + " " +
+                "WHERE symbol = '" + symbol + "';";
+        try {
+            Statement stmt = connection.createStatement();
+            int result = stmt.executeUpdate(sql);
+            System.out.println("Updated: " + symbol);
+        } catch (SQLException e) {
+            System.out.println(sql);
+            e.printStackTrace();
         }
     }
 

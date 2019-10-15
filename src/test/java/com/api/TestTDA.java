@@ -1,10 +1,7 @@
 package com.api;
 
-import com.api.TimeSpanException;
 import com.models.History;
 import com.models.Quote;
-import com.api.BadRequestException;
-import com.api.TDA;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -24,13 +21,6 @@ class TestTDA {
         Assertions.assertTrue(quote.getTotalVolume() > 0);
         Assertions.assertTrue(quote.get52WkHigh() > 0);
         Assertions.assertTrue(quote.get52WkLow() > 0);
-    }
-
-    @Test
-    void TestGetFundamental() {
-        Assertions.assertNotNull(tda.getFundamental("AAPL"));
-        Assertions.assertNotNull(tda.getFundamental("UWT"));
-        Assertions.assertNull(tda.getFundamental("InvalidSymbol"));
     }
 
     @Test

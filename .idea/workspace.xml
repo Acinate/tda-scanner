@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Ameritrade/AmeritradeScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/Ameritrade/AmeritradeScannerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/TDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/TDA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/auth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/api/TestTDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/api/TestTDA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/api/TDA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/api/TDA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/database/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/auth.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,6 +33,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -40,6 +48,8 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -47,10 +57,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.scanner.symbols.Ameritrade" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.scanner" />
       <recent name="com" />
       <recent name="main" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -79,6 +95,21 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AmeritradeScannerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="StockScanner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.scanner.symbols.Ameritrade.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.scanner.symbols.Ameritrade" />
+      <option name="MAIN_CLASS_NAME" value="com.scanner.symbols.Ameritrade.AmeritradeScannerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,27 +145,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NasdaqSummaryScannerTestCase.getSummary_Test_InvalidSymbol" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="StockScanner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.scanner.symbols.Nasdaq.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.scanner.symbols.Nasdaq" />
-      <option name="MAIN_CLASS_NAME" value="com.scanner.symbols.Nasdaq.NasdaqSummaryScannerTestCase" />
-      <option name="METHOD_NAME" value="getSummary_Test_InvalidSymbol" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SymbolScannerTestCase.scanSymbols_Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.scanner.symbols.*" />
+          <option name="PATTERN" value="com.scanner.symbols.Ameritrade.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,7 +165,7 @@
       <module name="StockScanner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.scanner.symbols.*" />
+          <option name="PATTERN" value="com.scanner.symbols.Ameritrade.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,19 +179,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.NasdaqSummaryScannerTestCase.getSummary_Test_InvalidSymbol" />
       <item itemvalue="JUnit.NasdaqSummaryScannerTestCase" />
       <item itemvalue="JUnit.NasdaqScannerTestCase.scanStocks_Test" />
       <item itemvalue="JUnit.SymbolScannerTestCase.scanSymbols_Test" />
       <item itemvalue="JUnit.SymbolScannerTestCase.updateSymbols_Test" />
+      <item itemvalue="JUnit.AmeritradeScannerTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SymbolScannerTestCase.updateSymbols_Test" />
+        <item itemvalue="JUnit.AmeritradeScannerTest" />
         <item itemvalue="JUnit.SymbolScannerTestCase.scanSymbols_Test" />
         <item itemvalue="JUnit.NasdaqScannerTestCase.scanStocks_Test" />
         <item itemvalue="JUnit.NasdaqSummaryScannerTestCase" />
-        <item itemvalue="JUnit.NasdaqSummaryScannerTestCase.getSummary_Test_InvalidSymbol" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571081573995</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="added fundamental scanner and database methods">
+      <created>1571097384598</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1571097384598</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,10 +381,20 @@
     <MESSAGE value="added symbol builder" />
     <MESSAGE value="added symbol builder and scanner" />
     <MESSAGE value="added asset scanner and database interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="added asset scanner and database interface" />
+    <MESSAGE value="added fundamental scanner and database methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="added fundamental scanner and database methods" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/database/Database.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="path" />

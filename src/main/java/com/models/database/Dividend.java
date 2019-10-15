@@ -2,8 +2,6 @@ package com.models.database;
 
 import com.models.responses.TdaFundamental;
 
-import java.util.Date;
-
 /**
  * Holds Dividend information for Symbol. Uses data from TdaFundamental.
  */
