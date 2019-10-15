@@ -1,6 +1,7 @@
 package com.database;
 
 import com.models.database.Asset;
+import com.models.database.Earnings;
 import com.models.database.Fundamental;
 
 import java.sql.*;
@@ -127,7 +128,7 @@ public class Database {
         }
     }
 
-    public void updateFundamental(String symbol, Fundamental fundamental) {
+    private void updateFundamental(String symbol, Fundamental fundamental) {
         String sql = "UPDATE fundamental " +
                 "SET symbol = '" + symbol + "', " +
                 "high52 = " + fundamental.getHigh52() + ", " +
@@ -148,6 +149,41 @@ public class Database {
         } catch (SQLException e) {
             System.out.println(sql);
             e.printStackTrace();
+        }
+    }
+
+    public void insertEarnings(String symbol, Earnings earnings) {
+        String sql = "INSERT INTO earnings " +
+                "(symbol, pe_ratio, peg_ratio, pb_ratio, pr_ratio, pcf_ratio, " +
+                "gross_margin_ttm, gross_margin_mrq, net_profit_margin_ttm, " +
+                "net_profit_margin_mrq, operating_margin_ttm, operating_margin_mrq, " +
+                "return_on_equity, return_on_assets, return_on_investment, quick_ratio, " +
+                "current_ratio, interest_coverage, total_debt_to_capital, lt_debt_to_equity, " +
+                "eps_ttm, eps_change_percent_ttm, eps_change_year, eps_change, rev_change_year, " +
+                "rev_change_ttm, rev_change_in) VALUES ('" + symbol + "', " +
+                earnings.getPeRatio() + ", " + earnings.getPegRatio() + ", " + earnings.getPbRatio() + ", " +
+                earnings.getPrRatio() + ", " + earnings.getPcfRatio() + ", " + earnings.getGrossMarginTtm() + ", " +
+                earnings.getGrossMarginMrq() + ", " + earnings.getNetProfitMarginTtm() + ", " +
+                earnings.getNetProfitMarginMrq() + ", " + earnings.getOperatingMarginTtm() + ", " +
+                earnings.getOperatingMarginMrq() + ", " + earnings.getReturnOnEquity() + ", " + earnings.getReturnOnAssets() +
+                ", " + earnings.getReturnOnInvestment() + ", " + earnings.getQuickRatio() + ", " + earnings.getCurrentRatio() +
+                ", " + earnings.getInterestCoverage() + ", " + earnings.getTotalDebtToCapital() + ", " +
+                earnings.getLtDebtToEquity() + ", " + earnings.getEpsTtm() + ", " + earnings.getEpsChangePercentTtm() + ", " +
+                earnings.getEpsChangeYear() + ", " + earnings.getEpsChange() + ", " + earnings.getRevChangeYear() + ", " +
+                earnings.getRevChangeTtm() + ", " + earnings.getRevChangeIn() + ")";
+        try {
+            Statement stmt = connection.createStatement();
+            int result = stmt.executeUpdate(sql);
+            System.out.println("Added: " + symbol);
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1062) {
+                System.out.println(symbol + " already exists");
+                // Run an update query
+                // updateFundamental(symbol, fundamental);
+            } else {
+                System.out.println(sql);
+                e.printStackTrace();
+            }
         }
     }
 

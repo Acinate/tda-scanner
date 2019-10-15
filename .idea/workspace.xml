@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3509108-7c2e-434d-b4d0-2413f3ad3523" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/Ameritrade/AmeritradeScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/scanner/symbols/Ameritrade/AmeritradeScannerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/api/TDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/api/TDA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Dividend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/database/Fundamental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/models/responses/TdaFundamental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/scanner/symbols/SymbolScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/auth.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/api/TestTDA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/api/TestTDA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/api/TDA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/api/TDA.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/database/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/database/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/scanner/symbols/SymbolScanner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/json/auth.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/json/auth.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -346,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571097384598</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="refactored fundamental object and scanners. added update method">
+      <created>1571144404652</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1571144404652</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -382,19 +382,11 @@
     <MESSAGE value="added symbol builder and scanner" />
     <MESSAGE value="added asset scanner and database interface" />
     <MESSAGE value="added fundamental scanner and database methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fundamental scanner and database methods" />
+    <MESSAGE value="refactored fundamental object and scanners. added update method" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored fundamental object and scanners. added update method" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/database/Database.java</url>
-          <line>130</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="path" />
